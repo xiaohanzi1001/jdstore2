@@ -11,10 +11,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if !current_cart.products.include?(@product)
     current_cart.add_product_to_cart(@product)
-    flash[:notice] = "You have succesfully added #{@product.titile} to cart"
+    flash[:notice] = "You have succesfully added #{@product.title} to cart"
   else
     flash[:warning] = "Your shopping cart had this product"
-  end 
+  end
     redirect_to :back
   end
 end
